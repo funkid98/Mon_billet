@@ -11,6 +11,17 @@ final eventsProvider = Provider<List<Event>>((ref) {
       type: 'Concert',
       place: 'Tunis',
       date: DateTime(2025, 10, 19),
+      category: 'Concerts',
+    ),
+    Event(
+      badge: "New",
+      title: 'Youssef El Marzouki Show',
+      imageUrl: 'assets/Concert.jpg',
+      price: '\$10',
+      type: 'Concert',
+      place: 'Sfax',
+      date: DateTime(2025, 11, 5),
+      category: 'Concerts',
     ),
   ];
 });

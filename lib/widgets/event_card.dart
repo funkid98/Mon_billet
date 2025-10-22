@@ -65,7 +65,12 @@ class _EventCardState extends State<EventCard> {
                 Positioned(
                   top: 12,
                   left: 12,
-                  child: _buildTag(widget.event.type, const Color(0xFFFFC107)),
+                  child: _buildTag(
+                    widget.event.badge == 'Popular' ? 'Popular' : 'New',
+                    widget.event.badge == 'Popular'
+                        ? Colors.orange
+                        : Colors.blue,
+                  ),
                 ),
                 Positioned(
                   top: 12,
@@ -99,9 +104,9 @@ class _EventCardState extends State<EventCard> {
                           ),
                         ),
                         const Spacer(),
-                        const Text(
-                          "Permoda",
-                          style: TextStyle(
+                        Text(
+                          widget.event.place,
+                          style: const TextStyle(
                             color: AppColors.greyLight,
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
@@ -114,12 +119,12 @@ class _EventCardState extends State<EventCard> {
               ],
             ),
           ),
-        )
-            // 👇 flutter_animate press animation
-            .animate(target: _isPressed ? 1 : 0)
-            .moveY(begin: 0, end: -10, duration: 120.ms)
-            .scale(begin: const Offset(1, 1), end: const Offset(1.03, 1.03)),
-      ),
+        ),
+      )
+          // 👇 flutter_animate press animation
+          .animate(target: _isPressed ? 1 : 0)
+          .moveY(begin: 0, end: -10, duration: 120.ms)
+          .scale(begin: const Offset(1, 1), end: const Offset(1.03, 1.03)),
     );
   }
 

@@ -6,7 +6,7 @@ class Event {
   final String type;
   final String place;
   final DateTime date;
-
+  final String category;
   Event({
     required this.title,
     required this.imageUrl,
@@ -15,5 +15,6 @@ class Event {
     required this.price,
     required this.place,
     required this.date,
+    required this.category,
   });
 }
